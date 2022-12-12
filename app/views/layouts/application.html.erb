@@ -11,7 +11,9 @@
   </head>
 
   <body><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
+    <%= render "shared/flashes" %>
+    <%= render partial: "cart/cart" if @render_cart %>
+    <h1>hola2</h1>
 
     <%= yield %>
   </body>
