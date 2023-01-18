@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_20_220648) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_19_204857) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,23 +47,31 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_20_220648) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "orders", force: :cascade do |t|
+  create_table "line_items", force: :cascade do |t|
     t.bigint "product_id", null: false
-    t.bigint "cart_id", null: false
-    t.integer "quantity"
-    t.string "status"
-    t.string "payment"
-    t.string "delivery"
+    t.integer "cart_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["cart_id"], name: "index_orders_on_cart_id"
-    t.index ["product_id"], name: "index_orders_on_product_id"
+    t.integer "quantity", default: 1
+    t.bigint "order_id"
+    t.index ["cart_id"], name: "index_line_items_on_cart_id"
+    t.index ["order_id"], name: "index_line_items_on_order_id"
+    t.index ["product_id"], name: "index_line_items_on_product_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "name"
+    t.text "address"
+    t.string "email"
+    t.integer "pay_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|
     t.string "name", null: false
     t.text "description"
-    t.decimal "price", precision: 5, scale: 2, null: false
+    t.decimal "price", null: false
     t.integer "stock"
     t.string "weigth"
     t.string "category"
@@ -87,7 +95,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_20_220648) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "orders", "carts"
-  add_foreign_key "orders", "products"
+  add_foreign_key "line_items", "carts"
+  add_foreign_key "line_items", "orders"
+  add_foreign_key "line_items", "products"
   add_foreign_key "products", "users"
 end

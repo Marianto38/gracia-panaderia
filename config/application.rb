@@ -12,6 +12,20 @@ module GraciaPanaderia
       generate.assets false
       generate.helper false
       generate.test_framework :test_unit, fixture: false
+
+      # config.active_job.queue_adapters = :delayed_job
+
+      # config.action_mailer.default_url_options = {host: 'example.com'}
+
+      # config.action_mailer.delivery_method = :smtp
+      # config.action_mailer.smtp_settings = {
+      #   address: 'localhost',
+      #   port: 1025
+      # }
+
+
+
+
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
