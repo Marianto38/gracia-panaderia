@@ -1,9 +1,13 @@
+.line-item-highlight {
+  background: #F0A500;
+}
+
 @keyframes line-item-highlight {
   0% {
-  background: #8f8;
+  background: rgb(255, 255, 255);
   }
   100% {
-  background: none;
+    background: #F0A500;
   }
 }
   .line-item-highlight {

@@ -1,16 +1,45 @@
-<h1>Store#index</h1>
-<p>Find me in app/views/store/index.html.erb</p>
+<hr class="border border-info">
 <div class="w-full">
-  <%= render 'notice' %>
-  <h1 class="font-bold text-xl mb-6 pb-2 border-b-2">Your Pragmatic Catalog</h1>
+  <!-- <div class="alert alert-primary" role="alert">
+    <%= render 'store/notice' %>
+  </div> -->
+
+
+
+    <div class="row  my-5">
+      <div class="col d-flex justify-content-end">
+        <img class="espiga" src="assets/espiga1.png" alt="" >
+      </div>
+      <div class="col">
+        <h3 class="font-bold text-light text-center">Nuestros Productos</h3>
+      </div>
+      <div class="col d-flex justify-content-start">
+        <img class="espiga1" src="assets/espiga1.png" alt="">
+      </div>
+    </div>
+
+<!-- cards de productos -->
   <%= turbo_stream_from 'products' %>
-  <ul>
-    <% cache @products do %>
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <% cache @products do %>
         <% @products.each do |product| %>
           <% cache product do %>
-            <%= render partial: 'product', object: product %>
+              <%= render partial: 'store/product', object: product %>
+
+
           <% end %>
+
+        <% end %>
+
       <% end %>
-    <% end %>
-  </ul>
+
+    </div>
+  </div>
+
+
+
+
 </div>
+
+

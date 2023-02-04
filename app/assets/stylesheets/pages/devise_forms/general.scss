@@ -1,0 +1,32 @@
+.bg {
+  background: rgb(215,255,231);
+  background: linear-gradient(315deg, rgba(215,255,231,1) 0%, rgba(10,110,127,1) 88%);  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+}
+/* .content{
+  position: absolute;
+  margin-top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+} */
+.form-text {
+  font-size: 0.69rem;
+  opacity: 0.90;
+  padding-left: 4px;
+  // color: $warning !important;
+}
+// input::placeholder {
+//   font-size: 0.9rem;
+// }
+.glass {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}

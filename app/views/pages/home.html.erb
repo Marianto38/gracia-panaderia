@@ -1,2 +1,170 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+    <div class="container">
+
+      <hr class="border border-info">
+
+      <img class="b" src="assets/harina5.png" style="position: absolute" alt="">
+      <img class="c" src="assets/harina5.png" style="position: absolute" alt="">
+
+        <!-- carrusel principal -->
+
+      <div id="carouselExampleDark" class="carousel carousel-dark slide mb-5" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner" >
+          <div class="container-02">
+
+          </div>
+
+          <div class="carousel-item active" data-bs-interval="10000">
+            <div class="carousel-caption d-none d-md-block">
+              <div class="row">
+                <div class="col-6">
+                  <img class="rounded-4" src="https://i.pinimg.com/564x/1c/f4/92/1cf492b99d0c9f301670cf14748f73f8.jpg" style="max-height: 300px;"  alt="">
+                </div>
+                <div class="col-6">
+                  <h5>First slide label</h5>
+                  <p>Some representative placeholder content for the first slide.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <div class="carousel-caption d-none d-md-block">
+              <div class="row">
+                <div class="col-6">
+                  <img class="rounded-4" src="https://i.pinimg.com/564x/1c/f4/92/1cf492b99d0c9f301670cf14748f73f8.jpg" style="max-height: 300px;"  alt="">
+                </div>
+                <div class="col-6">
+                  <h5>First slide label</h5>
+                  <p>Some representative placeholder content for the first slide.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-caption d-none d-md-block">
+              <div class="row">
+                <div class="col-6">
+                  <img class="rounded-4" src="https://i.pinimg.com/564x/1c/f4/92/1cf492b99d0c9f301670cf14748f73f8.jpg" style="max-height: 300px;"  alt="">
+                </div>
+                <div class="col-6">
+                  <h5>First slide label</h5>
+                  <p>Some representative placeholder content for the first slide.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <!-- descripcion -->
+      <div class="row">
+        <figure class="text-center my-5">
+          <blockquote class="blockquote">
+            <p>A well-known quote, contained in a blockquote element.</p>
+          </blockquote>
+          <figcaption class="blockquote-footer">
+            Someone famous in <cite title="Source Title">Source Title</cite>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="row justify-content-center mb-5">
+       <span class="d-flex justify-content-center"> <button type="button" class="btn btn-info  ps-5 pe-5 rounded-pill">Info</button> </span>
+      </div>
+
+
+ <!-- cards de productos -->
+  <%= turbo_stream_from 'products' %>
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4 ">
+      <% cache @products do %>
+        <% @products.each do |product| %>
+          <% cache product do %>
+              <%= render partial: 'store/product', object: product %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+
+      <!-- descripcion 2 -->
+      <div class="row">
+        <figure class="text-center my-5">
+          <blockquote class="blockquote">
+            <p>A well-known quote, contained in a blockquote element.</p>
+          </blockquote>
+          <figcaption class="blockquote-footer">
+            Someone famous in <cite title="Source Title">Source Title</cite>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="row justify-content-center">
+       <span class="d-flex justify-content-center"> <button type="button" class="btn btn-info  ps-5 pe-5 rounded-pill">Info</button> </span>
+      </div>
+
+
+
+       <!-- Formulario de contacto -->
+
+    <a name="contact" id="contact"></a>
+    <div class="row background-1 mt-5 pb-5 justify-content-center">
+      <h3 class="text-center mt-5 text-light"> <strong> CONTACT US </strong></h3>
+      <div class="row align-items-center justify-content-center mt-4">
+        <div class="col-md-12 col-lg-4">
+            <div class="d-flex justify-content-center icons mt-3 mv-3">
+                <a target="_blank" href="https://github.com/Marianto38"><i class="pe-4 fs-1 fa-brands fa-facebook text-info"></i></a>
+                <a target="_blank" href="https://wa.me/message/73NXELP7J6LFN1"><i class="pe-4 fs-1 fa-brands fa-whatsapp text-info"></i></a>
+                <a target="_blank" href="https://www.linkedin.com/in/mariaantonietapereira/"><i class="pe-4 fs-1 fa-brands fa-instagram text-info"></i></a>
+          </div>
+          <div class="row icons mt-3 justify-content-center">
+              <p class="text-center text-light"><i class="fa-solid fa-envelope-open-text"></i> <span class="ps-2"> graciapanaderia@gmail.com </span></p>
+              <p class="text-center text-light"><i class="fa-solid fa-location-dot"></i> <span class="ps-2"> Rionegro- Antioquia </span></p>
+          </div>
+
+
+        </div>
+        <div class="col-md-12 col-lg-4 d-flex justify-content-center">
+          <%= link_to "#", class: "navbar-brand" do %>
+          <img src="assets/logo.png" alt="" style="height: 150px; width: 150px;"  class="p-0 m-0">
+          <% end %>
+        </div>
+        <div class="col-md-12 col-lg-4 py-5 m-0 container-03">
+          <form target="_blank" action="https://formsubmit.co/6480a53acbf10ba54eba26184722cc22" method="POST">
+            <input type="hidden" name="_next" value="https://marianto38.github.io/portfolio/">
+            <input type="hidden" name="_captcha" value="false">
+            <div class="form-group">
+              <div class="form-row">
+                <div class="col">
+                  <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                </div>
+                <div class="col">
+                  <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <textarea placeholder="Your Message" class="form-control" name="message" rows="4" required></textarea>
+            </div>
+           <span class="d-flex justify-content-end"> <button type="submit" class="btn btn-lg btn-info ps-5 pe-5 mb-3 mt-3 text-center"> <span class="pe-2 fs-6"> Send Message  </span> <i class="pt-1 opacity-75 fa-solid fa-paper-plane"></i> </button> </span>
+          </form>
+        </div>
+
+        <!-- fin formulario -->
+
+        <!-- <img class="b" src="assets/harina5.png" style="position: absolute" alt=""> -->
+
+    </div>   <!-- cierra container -->

@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import PaymentController from "./payment_controller"
 application.register("payment", PaymentController)
+
+import SweetalertController from "./sweetalert_controller"
+application.register("sweetalert", SweetalertController)

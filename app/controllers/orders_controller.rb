@@ -29,7 +29,8 @@ class OrdersController < ApplicationController
       Cart.destroy(session[:cart_id])
       session[:cart_id] = nil
       OrderMailer.received(@order).deliver_later
-      format.html { redirect_to store_index_url, notice:
+      # SendOrderJob.perform_later
+      format.html { redirect_to store_url, notice:
       'Thank you for your order.' }
       format.json { render :show, status: :created,
       location: @order }
@@ -77,7 +78,7 @@ class OrdersController < ApplicationController
 
   def ensure_cart_isnt_empty
     if @cart.line_items.empty?
-    redirect_to store_index_url, notice: 'Your cart is empty'
+    redirect_to store_url, notice: 'Your cart is empty'
     end
   end
 end

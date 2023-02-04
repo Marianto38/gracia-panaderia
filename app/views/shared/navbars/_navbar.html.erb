@@ -1,0 +1,80 @@
+
+
+
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="assets/logo.png" />
+    </a>
+    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+
+    <div class="navbar pe-2" id="">
+      <ul class="navbar-nav me-auto">
+          <!-- <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li> -->
+          <li class="nav-item">
+            <% if user_signed_in? %>
+                <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle pe-2", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <div class="dropdown-menu dropdown-menu-end rounded-4 p-2" aria-labelledby="navbarDropdown">
+                  <!-- <%= link_to "#", class: "dropdown-item" do %>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="ms-3">Carrito</span>
+                    <% end %> -->
+                  <%= link_to "orders", class: "dropdown-item" do %>
+                  <i class="fa-solid fa-store"></i>
+                  <span class="ms-3">Mis Ordenes</span>
+                  <% end %>
+                  <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" do %>
+                  <i class="fa-solid fa-right-from-bracket"></i>
+                  <span class="ms-3"> Salir </span>
+                  <% end %>
+                </div>
+              </li>
+      </ul>
+       <% else %>
+          <li class="nav-item">
+            <%= link_to new_user_session_path, class: "nav-link" do %>
+              <i class="fa-solid fa-circle-user fs-2"></i>
+            <% end %>
+          </li>
+        <% end %>
+          <!-- <li class="nav-item dropdown"> -->
+            <!-- <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
+            </div> -->
+            <% if user_signed_in? %>
+            <button class="btn btn-transparent text-light position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fs-2 fa-solid fa-cart-shopping"></i></button>
+            <%= render partial: 'layouts/quantity', locals: {cart: @cart } %>
+
+            <% end %>
+
+<!--
+          </li> -->
+          <!--li class="nav-item"-->
+          <!--/li-->
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- off canvas de carrito -->
+<div class="offcanvas offcanvas-end bg-light img-cart" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h3 class="text-light mt-2" id="offcanvasRightLabel">Tu Carrito</h3>
+    <button type="button" class="btn-close btn-close-white text-reset bg-light rounded-circle" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <hr class="text-info">
+  <div class="offcanvas-body">
+    <div class="container mx-auto pt-5 pb-5 flex container-cart">
+      <%= render partial: 'layouts/cart', locals: {cart: @cart } %>
+    </div>
+  </div>
+</div>
+</div>

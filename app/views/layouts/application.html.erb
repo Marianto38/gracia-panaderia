@@ -8,34 +8,28 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
   </head>
 
+  <body>
+     <%= render "shared/navbars/navbar" %>
+     
+
+      <main class="container">
+        <%= yield %>
+        <%= render "shared/flashes" %>
+      </main>
+
+
+    <!-- <div class="col-3">
+      <div class="container mx-auto mt-4 px-5 flex bg-info">
+      <%= render partial: 'layouts/cart', locals: {cart: @cart } %>
+      </div>
+    </div> -->
 
 
 
-  <body><%= render "shared/navbar" %>
-    <%= render "shared/flashes" %>
-
-<header class="bg-green-700">
-
-<h1><%= @page_title %></h1>
-</header>
-<section class="flex">
-<nav class="bg-green-900 p-6">
-  <%= render partial: 'layouts/cart', locals: {cart: @cart } %>
-<ul class="text-gray-300 leading-8">
-<li><a href="/">Home</a></li>
-<li><a href="/questions">Questions</a></li>
-<li><a href="/news">News</a></li>
-<li><a href="/contact">Contact</a></li>
-</ul>
-</nav>
-<main class="container mx-auto mt-4 px-5 flex">
-<%= yield %>
-</main>
-</section>
 </body>
 </html>

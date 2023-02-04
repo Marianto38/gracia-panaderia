@@ -1,0 +1,160 @@
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.product-img {
+  position: absolute;
+  right: 500px;
+  top: -200px;
+  width: 250px;
+}
+.b {
+  right: 1000px;
+  top: 50px;
+  width: 550px;
+  z-index: -1;
+  transform: rotate(45deg);
+}
+
+
+.container-02 {
+  /* position: relative; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* height: 100vh;
+  width: 50%; */
+  background: #161616;
+  border-radius: 15px;
+  /* border-top: 1px solid #F0A500; */
+  backdrop-filter: blur(5px);
+  /* border-left: 1px solid #F0A500;
+  border-bottom: 1px solid #F0A500; */
+  background: rgba(255,255,255,0.05);
+  width: 100%;
+  height: 400px;
+}
+.container-03 {
+  /* position: relative; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* height: 100vh;
+  width: 50%; */
+  background: #161616;
+  border-radius: 15px;
+  /* border-top: 1px solid #F0A500; */
+  backdrop-filter: blur(5px);
+  /* border-left: 1px solid #F0A500;
+  border-bottom: 1px solid #F0A500; */
+  background: rgba(255,255,255,0.05);
+  color: #F4F4F4;
+}
+.c {
+  right: 0px;
+  top: 1300px;
+  width: 550px;
+  z-index: -1;
+  transform: rotate(-180deg);
+}
+.container-form {
+  /* position: relative; */
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // flex-direction: column;
+  /* height: 100vh;
+  width: 50%; */
+  background: #161616;
+  border-radius: 15px;
+  /* border-top: 1px solid #F0A500; */
+  backdrop-filter: blur(5px);
+  /* border-left: 1px solid #F0A500;
+  border-bottom: 1px solid #F0A500; */
+  background: rgba(255,255,255,0.05);
+  color: #F4F4F4;
+  padding: 50px;
+}
+.d {
+  right: 800px;
+  top: 60px;
+  width: 550px;
+  z-index: -1;
+  transform: rotate(-90deg);
+}
+.e {
+  right: 700px;
+  top: 60px;
+  width: 550px;
+  z-index: -1;
+  transform: rotate(-90deg);
+}
+.f {
+  right: 300px;
+  top: 60px;
+  width: 550px;
+  z-index: -1;
+  transform: rotate(-90deg);
+}
+.g {
+  right: -100px;
+  top: 60px;
+  width: 550px;
+  z-index: -1;
+  transform: rotate(-90deg);
+}
+.h {
+  right: 0px;
+  top: 150px;
+  z-index: -1;
+  transform: rotate(-90deg);
+  width: 400px;
+}
+.container-form-login {
+  background: #161616;
+  border-radius: 2px;
+  backdrop-filter: blur(20px);
+  background: rgba(6, 6, 6, 0.05);
+}
+.espiga1 {
+  transform: rotate(180deg);
+  max-width: 70%;
+}
+.espiga {
+  max-width: 70%;
+}
+.container-card-product {
+  background: #161616;
+  border-radius: 15px;
+  backdrop-filter: blur(20px);
+  background: rgba(6, 6, 6, 0.05);
+  box-shadow: 0 4px 30px rgba(249, 249, 247, 0.1);
+}
+.img-cart {
+  background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url("assets/harina8.jpg");
+  background-size: cover;
+}
+.container-cart {
+  background: #161616;
+  border-radius: 15px;
+  backdrop-filter: blur(20px);
+  background: rgba(6, 6, 6, 0.05);
+  box-shadow: 0 4px 30px rgba(249, 249, 247, 0.1);
+  max-height: 500px;
+}
+.quantity-cart {
+  right: 3px;
+  top: 20px;
+}

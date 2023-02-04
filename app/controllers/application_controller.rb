@@ -14,4 +14,12 @@ class ApplicationController < ActionController::Base
       session[:cart_id] = @cart.id
     end
   end
+
+  def after_sign_in_path_for(resource)
+    store_path
+  end
+
+  def after_update_path_for(resource)
+    store_path
+  end
 end

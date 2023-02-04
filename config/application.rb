@@ -22,13 +22,10 @@ module GraciaPanaderia
       #   address: 'localhost',
       #   port: 1025
       # }
-
-
-
-
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    config.active_job.queue_adapter = :sidekiq
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -37,5 +34,13 @@ module GraciaPanaderia
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.to_prepare do
+      Devise::SessionsController.layout "pages"
+      Devise::RegistrationsController.layout proc { user_signed_in? ? "application" : "pages" }
+      Devise::ConfirmationsController.layout "pages"
+      Devise::UnlocksController.layout "pages"
+      Devise::PasswordsController.layout "pages"
+    end
+
   end
 end

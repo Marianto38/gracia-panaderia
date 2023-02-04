@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gracia Panaderia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "pages", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "pages", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <body class="" style="position: relative;">
+
+    <% if current_page?(home_path) %>
+      <%= render "pages/shared/navbar_pages" %>
+    <% end %>
+
+
+    <main class="container">
+      <%= yield %>
+      <%= render "shared/flashes" %>
+    </main>
+
+  </body>
+</html>
