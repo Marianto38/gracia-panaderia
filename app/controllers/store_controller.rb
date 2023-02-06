@@ -6,9 +6,4 @@ class StoreController < ApplicationController
     @products = Product.order(:name)
   end
 
-  def show
-    @producr = Product([product_id])
-    
-  end
-
 end

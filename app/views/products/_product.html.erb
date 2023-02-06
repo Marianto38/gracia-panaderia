@@ -1,5 +1,5 @@
 <div id="<%= dom_id product %>">
-  <p>
+  <!-- <p>
     <strong>Name:</strong>
     <%= product.name %>
   </p>
@@ -12,6 +12,24 @@
   <p>
     <strong>Price:</strong>
     <%= product.price %>
-  </p>
+  </p> -->
+
+
+
+  <div class="card mb-3 container-03" style="">
+    <div class="row g-0">
+      <div class="col-md-4  d-flex align-items-center justify-content-center">
+        <img src="assets/solo.png" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"><%= product.name.capitalize %></h5>
+          <p class="card-text"><%= product.description %></p>
+          <p class="card-text"><%= number_to_currency(product.price) %></p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </div>
