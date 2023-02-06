@@ -13,6 +13,12 @@
 
 <%= link_to "New product", new_product_path %> -->
 
+<div class="back-btn mb-2 mt-0">
+  <%= link_to  :back do%>
+      <i class="fa-solid fa-circle-arrow-left  text-info fs-5 " class="back-btn rounded-4" data-bs-toggle="tooltip" data-bs-placement="top" title="Go Back"></i>
+  <% end %>
+</div>
+
 <div class="w-full">
   <% if notice.present? %>
   <p

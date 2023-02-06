@@ -158,3 +158,10 @@
   right: 3px;
   top: 20px;
 }
+
+.back-btn{
+  transition: transform 0.5s;
+}
+.back-btn:hover{
+  transform: scale(1.010);
+}

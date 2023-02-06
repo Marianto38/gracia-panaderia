@@ -1,5 +1,12 @@
 <!-- <h1>New order</h1> -->
 
+  <div class="back-btn mb-2 mt-0">
+    <%= link_to  :back do%>
+        <i class="fa-solid fa-circle-arrow-left  text-info fs-5 " class="back-btn rounded-4" data-bs-toggle="tooltip" data-bs-placement="top" title="Go Back"></i>
+    <% end %>
+  </div>
+
+
 <div class="mx-auto container-03">
   <h3 class="fw-bold  mt-3">Confirmar datos de tu orden</h3>
   <%= render "form", order: @order %>

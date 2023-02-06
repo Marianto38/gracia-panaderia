@@ -1,26 +1,45 @@
 <div id="<%= dom_id order %>">
 
-<div class="container">
 
-  <p>
-    <strong>Name:</strong>
-    <%= order.name %>
-  </p>
+  <div class="col container-03 ">
+    <div class="card h-100 bg-transparent border-0">
+      <div class="card-body">
+        <h5 class="card-title "> Orden Número:  <%= order.id %></h5>
+        <p class="card-text">
+          <strong>Nombre:</strong>
+          <%= order.name %>
+        </p>
 
-  <p>
-    <strong>Address:</strong>
-    <%= order.address %>
-  </p>
+        <p>
+          <strong>Dirección:</strong>
+          <%= order.address %>
+        </p>
 
-  <p>
-    <strong>Email:</strong>
-    <%= order.email %>
-  </p>
+        <p>
+          <strong>Correo:</strong>
+          <%= order.email %>
+        </p>
+
+      </div>
+      <div class="card-footer text-center">
+      <%= link_to order, class:"text-decoration-none link-dark text-info" do %>
+        <i class="fa-solid fa-eye rounded-circle p-2 bg-light text-dark fw-bold shadow-sm"></i>
+        <% end %>
+
+         <%= link_to order_path(order), class: "text-decoration-none link-dark circle-icon", data: { turbo_method: :delete, controller: 'sweetalert', action: "click->sweetalert#show", sweetalert_title_value: order.id } do %>
+      <i class="bi bi-trash3 rounded-circle p-2 bg-danger fw-bold shadow-sm bg-gradient"></i>
+    <% end %>
+
+    <%= link_to edit_order_path(order), class: "text-decoration-none link-dark circle-icon" do %>
+    <i class="fa-solid fa-pen-to-square rounded-circle p-2 bg-info fw-bold shadow-sm bg-gradient"></i>
+  <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>
 
   <!-- <p>
     <strong>Pay type:</strong>
     <%= order.pay_type %>
   </p> -->
-
-</div>
-</div>

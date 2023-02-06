@@ -1,15 +1,18 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @order %>
-
-<div>
-  <%= link_to "Edit this order", edit_order_path(@order) %> |
-  <%= link_to "Back to orders", orders_path %>
-
-  <%= button_to "Destroy this order", @order, method: :delete %>
-<%= link_to order_path(@order), class: "text-decoration-none link-dark circle-icon", data: { turbo_method: :delete, controller: 'sweetalert', action: "click->sweetalert#show", sweetalert_title_value: @order.name } do %>
-            <i class="bi bi-trash3 rounded-circle p-2 bg-danger fw-bold fs-5 shadow-sm bg-gradient"></i>
-          <% end %>
-
-
+<div class="back-btn mb-2 mt-0">
+  <%= link_to  :back do%>
+      <i class="fa-solid fa-circle-arrow-left  text-info fs-5 " class="back-btn rounded-4" data-bs-toggle="tooltip" data-bs-placement="top" title="Go Back"></i>
+  <% end %>
 </div>
+
+<h3 class="text-light">Detalle de orden</h3>
+<hr class="text-info">
+
+
+
+  <div class="row rounded-4 text-light">
+    <div class="col">
+      <%= render @order %>
+    </div>
+  </div>

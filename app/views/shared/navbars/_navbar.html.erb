@@ -3,9 +3,11 @@
 
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/store">
-      <img src="assets/logo.png" alt="" style="height: 80px; width: 80px;"  class="p-0 m-0">
-    </a>
+    <%= link_to "/", class: "" do %>
+      <%= cl_image_tag("https://res.cloudinary.com/dgktx5c4x/image/upload/v1675701726/logo_xliqm6.png",
+                        width: 80, height: 80, crop: :fill) %>
+    <% end %>
+
 
     <!-- <li class="nav-link p-0 m-0">
       <%= link_to "#", class: "navbar-brand" do %>
